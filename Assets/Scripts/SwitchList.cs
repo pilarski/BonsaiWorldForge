@@ -1,0 +1,125 @@
+/*
+   Copyright 2022 Patrick M. Pilarski
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
+// This file is responsible for maintaining and rendering
+// the switching list of end effectors
+
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class SwitchList : MonoBehaviour
+{
+    public GameObject[] Effectors;
+    public int ActiveIndex;
+    public int SwitchListLength;
+    public AudioClip SwitchingSoundAudio;
+    public AudioSource InteractionAudioSource;
+
+    private float _switchTimeRemaining = 0f;
+    private bool _visualizeList = false;
+    private GameObject[] _vizListObjects;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Effectors = GameObject.FindGameObjectsWithTag("EndEffector");
+
+        Effectors = Effectors.OrderBy(i => i.GetComponent<Effector>().ToolOrder).ToArray();
+
+        SwitchListLength = Effectors.Length;
+        ActiveIndex = 1;
+
+        UpdateVisibility();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_switchTimeRemaining > 0f)
+            _switchTimeRemaining -= Time.deltaTime;
+    }
+
+
+    // Visibility
+    public void UpdateVisibility()
+    {
+        foreach (GameObject e in Effectors)
+        {
+            MeshRenderer[] AllMeshRenderers = e.transform.GetComponentsInChildren<MeshRenderer>();
+            foreach (MeshRenderer m in AllMeshRenderers)
+            {
+                m.enabled = false;
+            }
+        }
+
+        GameObject active = Effectors[ActiveIndex];
+        MeshRenderer[] MeshRenderers = active.transform.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer m in MeshRenderers)
+        {
+            if (Effectors[ActiveIndex].GetComponent<Effector>().Attached == true)
+                m.enabled = true;
+        }
+
+    }
+
+
+    // Switching Function
+    public int Switch()
+    {
+        if (_switchTimeRemaining <= 0f)
+        {
+            _switchTimeRemaining = 0.2f;
+            ActiveIndex += 1;
+            if (ActiveIndex >= SwitchListLength)
+            {
+                ActiveIndex = 0;
+            }
+            while (Effectors[ActiveIndex].GetComponent<Effector>().Unlocked == false)
+            {
+                ActiveIndex += 1;
+                if (ActiveIndex >= SwitchListLength)
+                {
+                    ActiveIndex = 0;
+                }
+            }
+            InteractionAudioSource.PlayOneShot(SwitchingSoundAudio, 0.05f);
+        }
+        UpdateVisibility();
+        return ActiveIndex;
+    }
+
+
+    // Toggle between showing and not showing the coming items in the switching list 
+    public void VizToggle()
+    {
+        if (_switchTimeRemaining > 0f)
+            return;
+        _switchTimeRemaining = 0.2f;
+
+
+        if (!_visualizeList)
+        {
+            _visualizeList = true;
+        }
+        else
+        {
+            _visualizeList = false;
+        }
+
+
+    }
+
+}

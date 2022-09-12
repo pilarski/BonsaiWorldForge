@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterContainer
+  m_Shader: {fileID: -6465566751694194690, guid: e3d0388f5e94847979fa009b40f1ab96, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainNormal:
+        m_Texture: {fileID: 2800000, guid: d49eebaef8ef64daa970d84f5fbcf5fd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryNormal:
+        m_Texture: {fileID: 2800000, guid: 5871a63e17c13472d9119dd84356b6eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_02d54dd9fe9f4ea881215a10455bc5fa: 0.1
+    - Vector1_63826cd8b3a045e5a54189509fc65714: 50
+    - _AlphaClipSlider: 0.476
+    - _AlphaCutoff: 0.5
+    - _Depth: 2
+    - _FoamCuttof: 1
+    - _FoamDistance: 1
+    - _FoamSpeed: 0.2
+    - _Gloss: 0.04
+    - _Normal1Size: 0.1
+    - _Normal2Size: 0.15
+    - _NormalStrength: 0.5
+    - _Opacity: 0.8
+    - _RefractionStrength: 1
+    - _RippleDissolve: 4.5
+    - _RippleScale: 5
+    - _RippleSpeed: 1
+    - _RipplesTransparency: 5
+    - _Smoothness: 0.85
+    - _Strength: 0.19
+    - _WaveDisplacement: 0.5
+    m_Colors:
+    - _BaseColor: {r: 0, g: 0.3687834, b: 0.9245283, a: 0}
+    - _DeppWaterColour: {r: 0, g: 0.26581392, b: 0.41509432, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamColour: {r: 0.83137256, g: 0.9233491, b: 1, a: 0.74509805}
+    - _Normal1Speed: {r: 0.02, g: -0.02, b: 0, a: 0}
+    - _Normal2Speed: {r: 0.04, g: -0.01, b: 0, a: 0}
+    - _RipplesEmission: {r: 1, g: 1, b: 1, a: 0}
+    - _ShallowWaterColour: {r: 0.46666664, g: 0.7879505, b: 1, a: 0.3764706}
+  m_BuildTextureStacks: []

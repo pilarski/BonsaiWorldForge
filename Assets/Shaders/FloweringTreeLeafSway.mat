@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FloweringTreeLeafSway
+  m_Shader: {fileID: -6465566751694194690, guid: db11d5b1a7a044e00903475408acb909, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_39926324c4c1452e864d149f25f8a0ce:
+        m_Texture: {fileID: 2800000, guid: 064659ae6b59a4cd289f1eea1c8f5475, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_c4f43228da2c48f6a4a122ab951af925:
+        m_Texture: {fileID: 2800000, guid: 064659ae6b59a4cd289f1eea1c8f5475, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ed1c929f895c4be4b8314f0252e0dd7b:
+        m_Texture: {fileID: 2800000, guid: d41fc71b9f97d480e8b698c1ead36ed4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 7981c1ca8fcea4d258c7336c4b4ba193, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2845ad0cd98c4ee380b29627b8f32a84: 0
+    - _Metallic: 0.349
+    - _Smoothness: 0.872
+    - _WindSpeed: 1.16
+    - _WindStrength: 0.15
+    m_Colors:
+    - Color_062106bc4b894831a1bc3f095e7c9abe: {r: 0.3301887, g: 0.16353685, b: 0.23766223, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
