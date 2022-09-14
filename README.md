@@ -26,4 +26,4 @@ Steps:
 * Within the "Assets" directory, create a new directory named "3rdParty"
   * (Note about NavMesh github clone goes here)
 
-Please note, for VR deployment: this project requires SteamVR or another VR package set for Unity; specific SteamVR settings and files have been excluded from this repository, so some work may be required to re-insert the VR rigging approach when deploying the project on a new machine or with new hardware. Importantly, the main experimental code is attached to the camera gameObject inside the VR Rig, so please note this will need to be moved to a new rig if one is used. Similarly, updates may be required to bring this project up to date with current Unity LTS version used on the target machine.
+Please note, for VR deployment: this project requires SteamVR or another VR package set for Unity; specific SteamVR settings and files have been excluded from this repository, so some work may be required to re-insert the VR rigging approach when deploying the project on a new machine or with new hardware.
