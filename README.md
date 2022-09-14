@@ -1,6 +1,6 @@
 # Bonsai World Forge
 ### Pre-Alpha Demo
-"If you build it, [it might break and I'm sorry but please use at your own discretion]." (Field of Dreams, 1989, probably)
+"If you build it, [it might break and I'm sorry and please use at your own discretion]." (Field of Dreams, 1989, probably)
 
 ### Summary
 A flexible world-building game for human-agent machine intelligence research.
@@ -18,12 +18,11 @@ Key features:
 
 ### Setup and Use
 
-Steps:
-* Install <a href="https://unity.com/">Unity3D</a> 2020 LTS and Unity Hub;
-* Clone this repository to your local disk;
-* Import project into Unity Hub via "Open -> Add project from disk" and select location of cloned repository;
-  * n.b., this project is currently being developed in Unity 2020.3.26f1, using the Universal Render Pipeline (URP)
-* Within the "Assets" directory, create a new directory named "3rdParty"
-  * (Note about NavMesh github clone goes here)
+**Steps:**
+1. Install <a href="https://unity.com/">Unity 2020 LTS and Unity Hub</a>;
+2. Clone the BonsaiWorldForge repository main branch to your local disk;
+3. Import project into Unity Hub via "Open -> Add project from disk" and select location of cloned repository; note, this project is currently being developed in Unity 2020.3.26f1, using the Universal Render Pipeline (URP)
+4. Within the "Assets/" directory, create a new directory named "3rdParty"
+5. In the "Assets/3rdParty/" directory, clone Unity's NavMeshComponents (https://github.com/Unity-Technologies/NavMeshComponents); for Unity versions later than 2020.3 LTS, this step might not be required as scripts may be included in future releases of Unity's "AI Navigation" package. 
 
 Please note, for VR deployment: this project requires SteamVR or another VR package set for Unity; specific SteamVR settings and files have been excluded from this repository, so some work may be required to re-insert the VR rigging approach when deploying the project on a new machine or with new hardware.
