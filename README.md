@@ -28,3 +28,7 @@
 5. In the "Assets/3rdParty/" directory, clone Unity's NavMeshComponents (https://github.com/Unity-Technologies/NavMeshComponents); for Unity versions later than 2020.3 LTS, this step might not be required as scripts may be included in future releases of Unity's "AI Navigation" package. 
 
 _Please note, for VR deployment_: this project requires SteamVR or another VR package set for Unity; specific SteamVR settings and files have been excluded from this repository, so some work may be required to re-insert the VR rigging approach when deploying the project on a new machine or with new hardware.
+
+### Acknowledgements
+
+This work has been supoprted in part by the <a href="http://amii.ca">Alberta Machine Intelligence Instittue (Amii)</a> and the Canada CIFAR AI Chairs Program, part of the Pan-Canadian AI Strategy. Thanks is also due to the excellent ongoing comments, feedback, and ideas from colleagues, and especially all the members of <a href="http://blincdev.ca">BLINCdev</a> and the <a href="http://blinclab.ca">Bionic Limbs for Improved Natural Control (BLINC) Lab</a>.
