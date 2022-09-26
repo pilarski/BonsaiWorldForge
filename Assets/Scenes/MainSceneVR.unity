@@ -7493,11 +7493,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2902763782055600739, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: Attached
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2902763782055600739, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: Unlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2902763782055600739, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: ToolOrder

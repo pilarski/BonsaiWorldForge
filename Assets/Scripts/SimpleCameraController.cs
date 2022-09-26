@@ -132,6 +132,7 @@ namespace UnityTemplateProjects
 
         void Start()
         {
+            
             var map = new InputActionMap("Simple Camera Controller");
 
             lookAction = map.AddAction("look", binding: "<Mouse>/delta");

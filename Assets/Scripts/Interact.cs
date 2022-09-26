@@ -443,6 +443,10 @@ public class Interact : MonoBehaviour
         HeldObject = false;
     }
     
+    public float GetToggleTimeRemaining()
+    {
+        return _toggleTimeRemaining;
+    }
 
     public Effector GetEffector()
     {
