@@ -449,7 +449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 273555614}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &19864226
 Light:
@@ -3443,7 +3443,7 @@ Transform:
   m_Children:
   - {fileID: 273555614}
   m_Father: {fileID: 1908149502}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &252125721 stripped
 Transform:
@@ -3842,7 +3842,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 583936278}
   - {fileID: 19864225}
   m_Father: {fileID: 244364113}
   m_RootOrder: 0
@@ -7490,7 +7489,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 273555614}
+    m_TransformParent: {fileID: 1908149502}
     m_Modifications:
     - target: {fileID: 2902763782055600739, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: Attached
@@ -7702,23 +7701,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.40000004
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.40000004
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.19999981
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 1.06144
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6
+      value: 0.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 6850604837450657348, guid: a0271c4bd31c240a8abff088fe395573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23743,6 +23742,7 @@ Transform:
   m_LocalPosition: {x: 5.63, y: 4.2, z: -4.3099995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 583936278}
   - {fileID: 244364113}
   m_Father: {fileID: 0}
   m_RootOrder: 9
