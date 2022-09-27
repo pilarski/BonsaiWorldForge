@@ -27,10 +27,10 @@
 4. In the project's "Assets/3rdParty/" directory, clone Unity's NavMeshComponents (https://github.com/Unity-Technologies/NavMeshComponents); from that repo's assets folder, only include NavMeshComponents and Gizmos, and inside NavMeshComponents delete the folder "Editor". For Unity versions later than 2020.3 LTS, this step might not be required as scripts may be included in future releases of Unity's "AI Navigation" package.
 5. Import project into Unity Hub via "Open -> Add project from disk" and select location of cloned repository; note, this project is currently being developed in Unity 2020.3.26f1, using the Universal Render Pipeline (URP)
 
-_Please note, for VR deployment_: this project requires SteamVR and selected XR/VR package sets for Unity, and is currently being built for the Vive Focus 3, though it shouuld remain largely agnositc to VR platform; some work may be required to re-build the VR rigging approach when deploying the project on a new machine or with new hardware. Suggested steps include:
+**_Please note, for VR deployment_**: this project requires SteamVR and selected XR/VR package sets for Unity, and is currently being built for the Vive Focus 3, though it shouuld remain largely agnositc to VR platform; some work may be required to re-build the VR rigging approach when deploying the project on a new machine or with new hardware. Suggested steps include:
 1. Switch to "vr" branch;
 2. In package manager, install XR Plugin Management and dependencies; 
-3. In package manager, Install OpenXR Plugin;
+3. In package manager, install OpenXR Plugin;
 4. Platform specific: Install VIVE Input Utility (and its scoped registry if needed, and then possibly Wave Essence scripts for the VIVE Focus 3); 
 5. In "Project settings -> Player" switch Active Input Handling field to list "Input System Package";
 6. In "Project settings -> XR" make sure to select the platforms you wish to support.
