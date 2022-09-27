@@ -39,9 +39,10 @@ public class VRInteraction : MonoBehaviour
     void Update()
     {
         // Timer operations
-        if (_actionTimeRemaining > 0)
+        if (_actionTimeRemaining > 0f)
             _actionTimeRemaining -= Time.deltaTime;
-
+        if (_actionTimeRemaining < 0f)
+            _actionTimeRemaining = 0f;
 
         // Find out the current effector
         _effector = InteractScript.GetEffector();
@@ -95,11 +96,11 @@ public class VRInteraction : MonoBehaviour
 
     private void teleportAlongArmDirection(float distance)
     {
-        RaycastHit hit;
-        float thresholdDist = distance + 0.2f;
-        bool isTooClose = Physics.Raycast(transform.position, transform.forward, out hit, thresholdDist);
-        if (Vector3.Distance(hit.point, transform.parent.position) < thresholdDist)
-            return;
+/*        RaycastHit hit;
+        float thresholdDist = distance + 0.1f;
+        bool isTooClose = Physics.Raycast(transform.position, transform.rotation * Vector3.forward, out hit, distance);
+        if (Vector3.Distance(hit.point, transform.position) < thresholdDist)
+            return;*/
         transform.parent.position += transform.rotation * (Vector3.forward * distance);
     }
 }

@@ -64,7 +64,7 @@ public class Interact : MonoBehaviour
     private RaycastHit _hit;
     public bool _hasGrappleHit;
     private float _hitRange = 200f;
-    private float _hitRangeMin = 5f;
+    private float _hitRangeMin = 0.5f;
 
     private AudioSource _audioSource;
 
