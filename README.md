@@ -38,4 +38,4 @@
 
 ### Acknowledgements
 
-This work has been supoprted in part by the <a href="http://amii.ca">Alberta Machine Intelligence Instittue (Amii)</a> and the Canada CIFAR AI Chairs Program, part of the Pan-Canadian AI Strategy. Thanks is also due to the excellent ongoing comments, feedback, and ideas from colleagues, and especially all the members of <a href="http://blincdev.ca">BLINCdev</a> and the <a href="http://blinclab.ca">Bionic Limbs for Improved Natural Control (BLINC) Lab</a>.
+This work has been supported in part by the <a href="http://amii.ca">Alberta Machine Intelligence Institute (Amii)</a> and the Canada CIFAR AI Chairs Program, part of the Pan-Canadian AI Strategy. Thanks is also due to the excellent ongoing comments, feedback, and ideas from colleagues, and especially all the members of <a href="http://blincdev.ca">BLINCdev</a> and the <a href="http://blinclab.ca">Bionic Limbs for Improved Natural Control (BLINC) Lab</a>.
