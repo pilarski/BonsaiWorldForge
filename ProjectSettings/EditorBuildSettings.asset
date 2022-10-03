@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 33d936869cb414c258801934b19a09dd
+  - enabled: 1
+    path: Assets/Scenes/MainSceneVR.unity
+    guid: fffd3ef6d52da1d4c9f55134cbb31e5b
   m_configObjects:
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: fb2136e39733ebb41ad736511550fd3d, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 456a1841498e0904c81e3ec32195d6a4, type: 2}
