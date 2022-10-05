@@ -257,6 +257,10 @@ public class Interact : MonoBehaviour
                 ContactObj = other;
                 if (g.OnAnvil && _effector.Type == "hammer" && g.Heat >= 5.0f && g.IsFinalForm == false && _effector.Attached == true)
                 {
+                    // Update the use count for the activated effector
+                    _effector.ToolWasUsed();
+
+                    // Perform hammer hits
                     g.Hits[_effector.Size - 1] += 1;
                     g.Sparks.Emit(50);
                     if (g.Hits[0] + g.Hits[1] + g.Hits[2] == 1)
@@ -385,6 +389,7 @@ public class Interact : MonoBehaviour
         if (!(HeldObject == true && CurrentHeldObj.attachedRigidbody.GetComponent<Grippable>().IsPlaced && _effector.Type == "placer"))
             _audioSource.PlayOneShot(ToggleAudio, 0.1f);
 
+        // Tool attachment routine
         if (ContactObj != null && grippable.IsTool
             && grippable.ToolName == _effector.Type
             && grippable.ToolSize == _effector.Size
@@ -397,6 +402,7 @@ public class Interact : MonoBehaviour
             return;
         }
 
+        // Tool use routines
         if (ContactObj != null && HeldObject == false && _effector.Type == "tongs"
             && grippable.Size == EffectorSize
             && grippable.IsFinalForm == false
@@ -426,11 +432,8 @@ public class Interact : MonoBehaviour
             CurrentHeldObj = null;
             HeldObject = false;
         }
-
-        //if (_effector.Type == "teleport")
-        //{
-          
-        //}
+        // Update the use count for the activated effector
+        _effector.ToolWasUsed();
     }
 
     public void DropHeldObject()

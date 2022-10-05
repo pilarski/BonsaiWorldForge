@@ -26,10 +26,12 @@ public class SwitchList : MonoBehaviour
     public int SwitchListLength;
     public AudioClip SwitchingSoundAudio;
     public AudioSource InteractionAudioSource;
+    public bool AdaptiveSwitchingEnabled = false;
 
+    //private bool _switchingListChanged = false;
     private float _switchTimeRemaining = 0f;
     private bool _visualizeList = false;
-    private GameObject[] _vizListObjects;
+    //private GameObject[] _vizListObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +52,25 @@ public class SwitchList : MonoBehaviour
     {
         if (_switchTimeRemaining > 0f)
             _switchTimeRemaining -= Time.deltaTime;
-    }
 
+        // Simple priority increment with use example
+        // TODO: replace with call to new priority manager script
+        bool priorityMayHaveChanged = false;
+        foreach (GameObject e in Effectors)
+        {
+            bool used = e.GetComponent<Effector>().CheckToolUseChanged(true);
+            if (used)
+            {
+                e.GetComponent<Effector>().ToolPriority++;
+                priorityMayHaveChanged = true;
+            }
+        }
+        // Update switching list
+        if (priorityMayHaveChanged && AdaptiveSwitchingEnabled)
+        {
+            ReorderSwitchListByPriority(true, false);
+        }
+    }
 
     // Visibility
     public void UpdateVisibility()
@@ -81,6 +100,15 @@ public class SwitchList : MonoBehaviour
     {
         if (_switchTimeRemaining <= 0f)
         {
+            // If switching list has changed
+            // make sure the next thing switched to
+            // is the top of the new list
+            //if (_switchingListChanged)
+            //{
+            //    ActiveIndex = SwitchListLength - 1;
+            //    _switchingListChanged = false;
+            //}
+            // Perform switching, looping at end of list
             _switchTimeRemaining = 0.2f;
             ActiveIndex += 1;
             if (ActiveIndex >= SwitchListLength)
@@ -101,6 +129,45 @@ public class SwitchList : MonoBehaviour
         return ActiveIndex;
     }
 
+    // Method to change the position of tools in the switching list
+    public void ReorderSwitchListByPriority(bool deprioritizeCurrentTool=true, bool priorityIsDefaultToolOrder=false)
+    {
+        // Stash the unqiue identifier (default tool order position) for the active tool
+        int currentToolID = Effectors[ActiveIndex].GetComponent<Effector>().ToolOrder;
+
+        // Use the default ordering set in the editor as the list order
+        if (priorityIsDefaultToolOrder)
+        {
+            Effectors = Effectors.OrderBy(i => i.GetComponent<Effector>().ToolOrder).ToArray();
+        }
+        // Otherwise, reorder by the priority values for each effector
+        else
+        {
+            // 
+            if (deprioritizeCurrentTool)
+            {
+                Effector e = Effectors[ActiveIndex].GetComponent<Effector>();
+                float stashedPriority = e.ToolPriority;
+                e.ToolPriority = -1000f;
+                Effectors = Effectors.OrderByDescending(i => i.GetComponent<Effector>().ToolPriority).ToArray();
+                e.ToolPriority = stashedPriority;
+            }
+            else
+            {
+                Effectors = Effectors.OrderByDescending(i => i.GetComponent<Effector>().ToolPriority).ToArray();
+            }
+        }
+
+        // Preserve the active index in the reordered list
+        int i = 0;
+        foreach (GameObject e in Effectors)
+        {
+            if (e.GetComponent<Effector>().ToolOrder == currentToolID)
+                ActiveIndex = i;
+            i++;
+        }
+        //_switchingListChanged = true;
+    }
 
     // Toggle between showing and not showing the coming items in the switching list 
     public void VizToggle()
@@ -109,6 +176,8 @@ public class SwitchList : MonoBehaviour
             return;
         _switchTimeRemaining = 0.2f;
 
+        //TODO: temporary overload to allow switch list reordering
+        ReorderSwitchListByPriority(true, false);
 
         if (!_visualizeList)
         {
@@ -118,8 +187,6 @@ public class SwitchList : MonoBehaviour
         {
             _visualizeList = false;
         }
-
-
     }
 
 }

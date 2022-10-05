@@ -233,6 +233,9 @@ namespace UnityTemplateProjects
                 InteractScript.Toggle();
                 if (InteractScript._hasGrappleHit)
                 {
+                    // Update tool use
+                    InteractScript.GetEffector().ToolWasUsed();
+                    // Transport camera
                     Vector3 point = InteractScript.GetGrapplePoint();
                     m_TargetCameraState.RawTranslate(new Vector3(
                         (point.x - m_TargetCameraState.x) * 1f,

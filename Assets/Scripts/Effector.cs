@@ -24,13 +24,18 @@ public class Effector : MonoBehaviour
     public string Type;
     public int Size;
     public int ToolOrder;
+    public float ToolPriority;
+    public int ToolUseCount;
+    public bool ToolUseCountChanged;
     public bool Unlocked = true;
     public bool Attached = true;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ToolPriority = 0f;
+        ToolUseCount = 0;
+        ToolUseCountChanged = false;
     }
 
     // Update is called once per frame
@@ -39,8 +44,21 @@ public class Effector : MonoBehaviour
         
     }
 
-    public static implicit operator Effector(GameObject v)
+    // Methos to flag that tool was used
+    public void ToolWasUsed()
     {
-        throw new NotImplementedException();
+        ToolUseCount++;
+        ToolUseCountChanged = true;
+    }
+
+    // Method to query for new tool use and resetthe use flag
+    public bool CheckToolUseChanged(bool reset = true)
+    {
+        bool changed = ToolUseCountChanged;
+        if (reset)
+        {
+            ToolUseCountChanged = false;
+        }
+        return changed;
     }
 }
