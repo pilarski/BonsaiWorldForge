@@ -31,6 +31,7 @@ public class SwitchList : MonoBehaviour
     //private bool _switchingListChanged = false;
     private float _switchTimeRemaining = 0f;
     private bool _visualizeList = false;
+    private ToolPriorityManager _toolPriorityManager;
     //private GameObject[] _vizListObjects;
 
     // Start is called before the first frame update
@@ -42,6 +43,9 @@ public class SwitchList : MonoBehaviour
 
         SwitchListLength = Effectors.Length;
         ActiveIndex = 1;
+
+        _toolPriorityManager = GetComponent<ToolPriorityManager>();
+        _toolPriorityManager.InitPriorityValues();
 
         UpdateVisibility();
 

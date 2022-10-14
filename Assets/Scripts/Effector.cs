@@ -23,7 +23,7 @@ public class Effector : MonoBehaviour
 
     public string Type;
     public int Size;
-    public int ToolOrder;
+    public int ToolOrder; // Used as a unqiue tool ID; TODO: rename?
     public float ToolPriority;
     public int ToolUseCount;
     public bool ToolUseCountChanged;
