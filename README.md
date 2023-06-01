@@ -31,7 +31,7 @@
 <img width="1723" alt="navmeshsurface-details" src="https://user-images.githubusercontent.com/1139429/193423227-ff8f7099-6835-4643-817e-eca8cfda3efa.png">
 
 
-**_Please note, for VR deployment_**: this project requires SteamVR and selected XR/VR package sets for Unity, and is currently being built for the Vive Focus 3, though it shouuld remain largely agnositc to VR platform; some work may be required to re-build the VR rigging approach when deploying the project on a new machine or with new hardware. Suggested steps include:
+**_Please note, for VR deployment_**: this project requires SteamVR and selected XR/VR package sets for Unity, and is currently being built for the Vive Focus 3, though it should remain largely agnostic to VR platform; some work may be required to re-build the VR rigging approach when deploying the project on a new machine or with new hardware. Suggested steps include:
 1. Switch to "vr" branch;
 2. In package manager, install XR Plugin Management and dependencies; 
 3. In package manager, install OpenXR Plugin;
