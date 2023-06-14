@@ -260,7 +260,7 @@ namespace UnityTemplateProjects
             }
 
             // Change colour of fog and density if under water
-            if (m_TargetCameraState.y >= 0f)
+            if (transform.position.y >= 0f)
             {
                 RenderSettings.fogDensity = 0.01f;
                 RenderSettings.fogColor = new Color(0.5f, 0.78f, 1.0f);
@@ -275,7 +275,7 @@ namespace UnityTemplateProjects
             else
             {
                 RenderSettings.fogDensity = 0.1f;
-                RenderSettings.fogColor = new Color(0.4f + m_TargetCameraState.y / 30f, 0.78f + m_TargetCameraState.y / 30f, 0.9f + m_TargetCameraState.y /30f);
+                RenderSettings.fogColor = new Color(0.4f + transform.position.y / 30f, 0.78f + transform.position.y / 30f, 0.9f + transform.position.y /30f);
                 if (!IsUnderwater)
                 {
                     GetComponentInParent<AudioSource>().clip = BelowWaterAudio;
